@@ -1,11 +1,15 @@
 import React, {useState} from "react";
 import logo from "../logo.svg";
 import "./counter.css";
+import { UserContext } from "../learn-usecontext";
 import TextInput from "./TextInput";
 
 export default function Counter(){
 const [showImage,setShowImage] = useState(true);
 const [count, setCount] = useState(0);
+const [user,setUser] = useState("KOKO MERONG");
+
+
 const countUp = () => {
 setCount(count +1);
 
@@ -45,6 +49,9 @@ Down
 </button>
 </div>
 </div>
+<UserContext.Provider value={user} >
+    <h1>ini {user} dari kelompok 17</h1>
+</UserContext.Provider>
 <TextInput />
 </div>
 );

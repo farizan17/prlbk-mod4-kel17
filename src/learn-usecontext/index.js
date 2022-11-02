@@ -19,7 +19,6 @@ const UserContext = React.createContext();
 
 export default function Context(){
 const [theme,setTheme] = useState(themes.dark);
-const [user,setUser] = useState("KOKO MERONG");
 const changeTheme = () => {
 if (theme.id === themes.light.id) {
 setTheme(themes.dark);
@@ -34,9 +33,7 @@ theme.background,color: theme.foreground}}>
 <p className="Text">Theme by useContext</p>
 <p>KELOMPOK17</p>
 <ThemedButton/>
-<UserContext.Provider value={user}>
-    <h1>ini {user} dari kelompok 17</h1>
-</UserContext.Provider>
+
 </div>
 </ThemeContext.Provider>
 );
@@ -53,3 +50,5 @@ i am styled by theme context!
 </button>
 );
 }
+
+export {UserContext};
